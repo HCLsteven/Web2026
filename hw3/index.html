@@ -3,59 +3,262 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Portfolio</title>
+  <title>個人作品集</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      color: white;
+      padding: 100px 0;
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .profile-img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid rgba(255,255,255,0.35);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .skill-badge {
+      font-size: 1rem;
+      padding: 0.7rem 1rem;
+      margin: 0.3rem;
+    }
+
+    .project-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      height: 100%;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    .contact-box {
+      background-color: #f8f9fa;
+      border-radius: 1rem;
+      padding: 2rem;
+    }
+
+    footer {
+      background: #212529;
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="#">My Portfolio</a>
-  </div>
-</nav>
-
-<header class="bg-light py-5 text-center">
-  <div class="container">
-    <h1>你的名字</h1>
-    <p class="lead">資工系學生 / 網頁程式設計學習中</p>
-  </div>
-</header>
-
-<section class="container py-5">
-  <h2>About Me</h2>
-  <p>這裡放你的自我介紹。</p>
-</section>
-
-<section class="container py-5">
-  <h2>Skills</h2>
-  <div class="row">
-    <div class="col-12 col-md-6 col-lg-4">Python</div>
-    <div class="col-12 col-md-6 col-lg-4">HTML/CSS</div>
-    <div class="col-12 col-md-6 col-lg-4">Django</div>
-  </div>
-</section>
-
-<section class="container py-5">
-  <h2>Projects</h2>
-  <div class="row g-4">
-    <div class="col-12 col-md-6">
-      <div class="card p-3">
-        <h5>Django API 作業</h5>
-        <p>建立 add/list API 與 SQLite 資料表。</p>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">My Portfolio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">關於我</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">作品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡方式</a></li>
+        </ul>
       </div>
     </div>
-    <div class="col-12 col-md-6">
-      <div class="card p-3">
-        <h5>HTML Table 練習</h5>
-        <p>使用 table、button 與 popover 製作課表。</p>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-7 text-center text-lg-start">
+          <h1 class="display-4 fw-bold">你好，我是王小明</h1>
+          <p class="lead mt-3">
+            長庚大學資工系學生，正在學習網頁設計、JavaScript、Django 與前後端整合。
+          </p>
+          <div class="mt-4">
+            <a href="#projects" class="btn btn-light btn-lg me-2">查看作品</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg">聯絡我</a>
+          </div>
+        </div>
+        <div class="col-12 col-lg-5 text-center">
+          <img src="https://via.placeholder.com/220" alt="個人照片" class="profile-img">
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<footer class="bg-dark text-white text-center py-3">
-  <p class="mb-0">© 2026 你的名字</p>
-</footer>
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">關於我</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+          <div class="card shadow-sm border-0">
+            <div class="card-body p-4">
+              <p class="mb-3">
+                我目前就讀長庚大學資訊工程學系，對網站開發與程式設計有濃厚興趣。
+                在課堂中接觸了 HTML、CSS、JavaScript、Bootstrap、Python 與 Django，
+                也練習了建立 API、資料表設計、SQLite 操作與前端互動功能。
+              </p>
+              <p class="mb-0">
+                我希望未來能持續提升自己的前端與後端開發能力，完成更多完整的網頁作品。
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">技能</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 text-center">
+          <span class="badge text-bg-primary skill-badge">HTML</span>
+          <span class="badge text-bg-success skill-badge">CSS</span>
+          <span class="badge text-bg-warning skill-badge">JavaScript</span>
+          <span class="badge text-bg-info skill-badge">Bootstrap</span>
+          <span class="badge text-bg-dark skill-badge">Python</span>
+          <span class="badge text-bg-secondary skill-badge">Django</span>
+          <span class="badge text-bg-danger skill-badge">SQLite</span>
+          <span class="badge text-bg-primary skill-badge">Git / GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="section-title text-center">作品與練習</h2>
+      <div class="row g-4">
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">Django API 課程作業</h5>
+              <p class="card-text">
+                使用 Django 與 SQLite 建立資料表，並完成新增資料與列出資料的 API。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">HTML Table 課表頁面</h5>
+              <p class="card-text">
+                使用 HTML table、CSS 樣式與按鈕互動，製作課表與課程資訊頁面。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">JavaScript Console 練習</h5>
+              <p class="card-text">
+                透過 `console.log()` 與函式設計，在瀏覽器 console 中印出聖誕樹。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">Bootstrap 個人網站</h5>
+              <p class="card-text">
+                使用 Bootstrap 完成具備 RWD 的個人網站，能在手機、平板與電腦正常顯示。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">資料庫與 SQL 練習</h5>
+              <p class="card-text">
+                練習建立資料表、寫 SQL 指令，以及理解資料模型與資料查詢流程。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card project-card shadow-sm border-0">
+            <div class="card-body">
+              <h5 class="card-title">更多作品持續更新中</h5>
+              <p class="card-text">
+                未來會加入更多課堂作業、專題練習與前後端整合作品。
+              </p>
+              <a href="#" class="btn btn-outline-primary btn-sm">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="section-title text-center">聯絡方式</h2>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="contact-box shadow-sm">
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <h5>Email</h5>
+                <p class="mb-0">5862046@gmail.com</p>
+              </div>
+              <div class="col-12 col-md-6">
+                <h5>GitHub</h5>
+                <p class="mb-0">
+                  <a href="https://github.com/your-github-id" target="_blank">https://github.com/HCLsteven</a>
+                </p>
+              </div>
+              <div class="col-12">
+                <h5 class="mt-3">自我介紹摘要</h5>
+                <p class="mb-0">
+                  我喜歡學習程式設計與網站開發，希望能持續累積作品，提升實作能力。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    <div class="container">
+      <p class="mb-1">© 2026 林綖宣 Portfolio</p>
+      <small>Built with Bootstrap 5</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
